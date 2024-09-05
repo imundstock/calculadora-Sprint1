@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styleL.css">
+    <link rel="stylesheet" href="styleD.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+        <div class="container-calculadora">
+            <div><input id="historico" readonly></div>
+            <div><input id="display" readonly></div>
+            <div class="row">            
+                <button onclick="calcularPorcentagem()('%')" class="btn-operação">%</button>
+                <button onclick="backspaceDisplay('CE')" class="btn-operação"><i class="fas fa-backspace"></i></button>
+                <button onclick="clearDisplay('C')" ondblclick="clearHistorico()" class="btn-operação">C</button>
+                <button id="theme-switcher" class="temabtn('TC')">TC</button>
+                <link id="theme-link" rel="stylesheet" href="styleL.css">
+                
+            </div>
+
+            <div class="row">
+                <button onclick="elevanamenosum('**-1')" class="btn-operação"><sup>1</sup>/<sub>x</sub></button>
+                <button onclick="elevaquadrado('**')" class="btn-operação">x<sup>2</sup></button>
+                <button onclick="raizQuadrada('√')" class="btn-operação">√x</button>
+                <button onclick="toDisplay('÷')" class="btn-operação">÷</button>
+            </div>
+            
+            <div class="row">
+                <button onclick="toDisplay('7')">7</button>
+                <button onclick="toDisplay('8')">8</button>
+                <button onclick="toDisplay('9')">9</button>
+                <button onclick="toDisplay('*')" class="btn-operação">x</button>
+            </div>
+            
+            <div class="row">
+                <button onclick="toDisplay('4')">4</button>
+                <button onclick="toDisplay('5')">5</button>
+                <button onclick="toDisplay('6')">6</button>
+                <button onclick="toDisplay('-')" class="btn-operação">-</button>
+            </div>
+            
+            <div class="row">
+                <button onclick="toDisplay('1')">1</button>
+                <button onclick="toDisplay('2')">2</button>
+                <button onclick="toDisplay('3')">3</button>
+                <button onclick="toDisplay('+')" class="btn-operação">+</button>
+            </div>
+            
+            <div class="row">
+                <button onclick="toDisplay('0')">0</button>
+                <button onclick="toDisplay('.')">.</button>
+                <button onclick="inverteResultado('+/-')" class="btn-operação"><sup>+</sup>/<inf>-</inf></button>
+                <button onclick="calcular('=')" class="igual">=</button>
+            </div>
+
+        </div>   
+
+        
+
+
+    </div>
+
+    <script src="script.js"></script>  
+</body>
+</html>

@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(192, 192, 192));
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container-calculadora{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(215, 215, 215);
+    border: none;
+    width: 380px;
+    height: 590px;
+    border-radius: 15px;
+    
+}
+
+.row{
+    flex-direction: row;
+    display: flex;
+    border: none;
+    margin: none;
+    height: 60px;
+    justify-content:space-evenly;
+    align-items:flex-start;
+    margin-bottom: 15px;
+}
+
+#display{
+    display: flex;
+    width: 376px;
+    height: 60px;
+    padding: none;
+    border: none;
+    background-color:rgb(215, 215, 215);
+    font-size: 2rem;
+    text-align: end;
+    color: black;
+    font-weight: bold;
+}
+
+#historico{
+    width: 376px;
+    height: 60px;
+    padding: none;
+    border: none;
+    background-color:rgb(215, 215, 215);
+    border-top-right-radius: 15px; 
+    border-top-left-radius: 15px;
+    font-size: 2rem;
+    text-align: end;
+    color: black;
+}
+
+button{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 5px;
+    border: none;
+    background-color:rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    font-family:'monospace'; 
+    box-shadow: 1px 3px rgb(165, 155, 155);
+    color: black;
+}
+
+button:hover{
+    background-color:rgb(240, 240, 255);
+}
+
+button:active{
+    background-color:rgb(255, 255, 255);
+}
+
+.btn-operação{
+    background-color: rgb(255, 245, 230);
+}
+
+.btn-operação:hover{
+    background-color: rgb(255, 255, 220);
+}
+
+.btn-operação:active{
+    background-color: rgb(255, 255, 255);
+}
+
+.igual{
+    background-color: rgb(255, 245, 230);
+}
+
+.igual:hover{
+    background-color: rgb(255, 255, 220);
+}
+
+.igual:active{
+    background-color: rgb(255, 255, 255);
+}
+
+.temabtn{
+    background-color:hsl(0, 0%, 0%);
+    color: black;
+} 
+
+.temabtn:hover{
+    background-color:hsl(0, 0%, 0%);
+    color: black;
+}
+ 
+
+
+
+  
