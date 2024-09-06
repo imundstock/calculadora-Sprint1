@@ -124,40 +124,47 @@ function calcularPorcentagem() {
         const historico = document.getElementById("historico");
         let valorAtual = display.value;
 
-        // Verifica se há uma operação a ser calculada antes da porcentagem
-        const regex = /([\d.]+)([+\-*/])([\d.]+)$/;  // Regex para identificar a operação
+       
+        const regex = /([\d.]+)([+\-*/])([\d.]+)$/; //verifica se tem operação e o regex descobre qual é
         const match = valorAtual.match(regex);
 
         if (match) {
-            const num1 = parseFloat(match[1]);  // Primeiro número
-            const operador = match[2];          // Operador (+, -, *, /)
-            const num2 = parseFloat(match[3]);  // Número após o operador (percentual)
+            const num1 = parseFloat(match[1]);  
+            const operador = match[2];          
+            const num2 = parseFloat(match[3]);  // separa em numero 1 operação e numero 2, sendo o numero 2 o que vai ser a %
 
-            // Cálculo da porcentagem
+            
             let resultado;
-            if (operador === '+' || operador === '-') {
-                // Em adição/subtração, calcula a porcentagem do primeiro número
-                resultado = (num1 * num2) / 100;
-                if (operador === '+') {
+            switch (operador) {     //switch pra selecionar a operação encontrada pelo regex
+                case '+':
+                    resultado = (num1 * num2) / 100;
                     resultado = num1 + resultado;
-                } else {
+                    break;
+                    
+                case '-':
+                    resultado = (num1 * num2) / 100;
                     resultado = num1 - resultado;
-                }
-            } else if (operador === '*' || operador === '/') {
-                // Em multiplicação/divisão, trata como porcentagem simples
-                resultado = (num1 * num2) / 100;
-                if (operador === '/') {
+                    break;
+                    
+                case '*':
+                    resultado = (num1 * num2) / 100;
+                    break;
+                    
+                case '/':
+                    resultado = (num1 * num2) / 100;
                     resultado = num1 / resultado;
-                }
+                    break;
+                    
+                default:
+                    console.log('Operador inválido');   // default pra caso uma das operações não seja as especificadas
+                    break;
             }
 
-            // Atualiza o display e o histórico com o cálculo
             display.value = resultado;
-            historico.value = `${valorAtual}%`;
+            historico.value = `${valorAtual}%`;     // atualiza os display com resultado e a conta no histórico se tiver 2 numeros e uma operação
         } else {
-            // Caso seja apenas um número e o % é aplicado direto nele
             display.value = eval(valorAtual) / 100;
-            historico.value = `${valorAtual}%`;
+            historico.value = `${valorAtual}%`;     // calculo pra caso seja só um numero e porcentagem ele faz sobre 100
         }
     } catch (error) {
         display.value = "Erro";
