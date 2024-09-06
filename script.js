@@ -116,7 +116,6 @@ function inverteResultado(){
     display.value = display.value * -1;
 }
 
-// function calculaPorcentagem() {}
 
 function calcularPorcentagem() {
     try {
