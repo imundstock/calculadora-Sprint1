@@ -105,13 +105,15 @@ button:active{
 }
 
 .temabtn{
-    background-color:hsl(0, 0%, 0%);
-    color: black;
-} 
+    background-color: rgb(255, 245, 230);
+}
 
 .temabtn:hover{
-    background-color:hsl(0, 0%, 0%);
-    color: black;
+    background-color: rgb(255, 255, 220);
+}
+  
+.temabtn:active{
+    background-color: rgb(95, 95, 95);
 }
  
 

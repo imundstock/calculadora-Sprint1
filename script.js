@@ -35,22 +35,18 @@ function calcular(){
 
 function switchTheme() {
     const themeLink = document.getElementById('theme-link');
+    const themeSwitcher = document.getElementById('theme-switcher');
+    
     if (themeLink.getAttribute('href') === 'styleL.css') {
         themeLink.setAttribute('href', 'styleD.css');
+        themeSwitcher.innerHTML = '<i class="fas fa-sun"></i>';  // Mudar para ícone de sol
     } else {
         themeLink.setAttribute('href', 'styleL.css');
+        themeSwitcher.innerHTML = '<i class="fas fa-moon"></i>';  // Mudar para ícone de lua
     }
 }
+
 document.getElementById('theme-switcher').addEventListener('click', switchTheme);
-
-//function elevaquadrado(){
-//    toHistorico();
-//    const display = document.getElementById("display");
-//    let valorq = display.value;
-//    historico.value = `${valorq}²`;
-//    display.value = valorq ** 2;
-//}
-
 
 function elevaquadrado(){
     const display = document.getElementById("display");
@@ -62,15 +58,6 @@ function elevaquadrado(){
 
     display.value = valor ** 2;
 }
-
-
-//function elevanamenosum(){
-//    const display = document.getElementById("display");
-//    let valor_1 = display.value;
-//    //historico.value = `1/${valor_1}`;
-//    historico.value = `1/${valor_1}`;
-//    display.value = valor_1 ** -1;
-//}
 
 function elevanamenosum(){
     const display = document.getElementById("display");
@@ -87,12 +74,6 @@ function elevanamenosum(){
     }
 }
 
-//function raizQuadrada(){
-//    const display = document.getElementById("display");
-//    let raiz = display.value;
-//    historico.value = `√${raiz}`;
-//    display.value = Math.sqrt(raiz);
-//}
 
 function raizQuadrada() {
     try {
