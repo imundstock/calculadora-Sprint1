@@ -105,17 +105,17 @@ function calcularPorcentagem() {
         let valorAtual = display.value;
 
        
-        const regex = /([\d.]+)([+\-*/])([\d.]+)$/; //verifica se tem operação e o regex descobre qual é
+        const regex = /([\d.]+)([+\-*/])([\d.]+)$/; // Verifica se tem operação e o regex descobre qual é
         const match = valorAtual.match(regex);
 
         if (match) {
             const num1 = parseFloat(match[1]);  
             const operador = match[2];          
-            const num2 = parseFloat(match[3]);  // separa em numero 1 operação e numero 2, sendo o numero 2 o que vai ser a %
+            const num2 = parseFloat(match[3]);  // Separa em numero 1 operação e numero 2, sendo o numero 2 o que vai ser a %
 
             
             let resultado;
-            switch (operador) {     //switch pra selecionar a operação encontrada pelo regex
+            switch (operador) {     // Switch pra selecionar a operação encontrada pelo regex
                 case '+':
                     resultado = (num1 * num2) / 100;
                     resultado = num1 + resultado;
@@ -136,15 +136,15 @@ function calcularPorcentagem() {
                     break;
                     
                 default:
-                    console.log('Operador inválido');   // default pra caso uma das operações não seja as especificadas
+                    console.log('Operador inválido');   // Default pra caso uma das operações não seja as especificadas
                     break;
             }
 
             display.value = resultado;
-            historico.value = `${valorAtual}%`;     // atualiza os display com resultado e a conta no histórico se tiver 2 numeros e uma operação
+            historico.value = `${valorAtual}%`;     // Atualiza os display com resultado e a conta no histórico se tiver 2 numeros e uma operação
         } else {
             display.value = eval(valorAtual) / 100;
-            historico.value = `${valorAtual}%`;     // calculo pra caso seja só um numero e porcentagem ele faz sobre 100
+            historico.value = `${valorAtual}%`;     // Cálculo pra caso seja só um numero e porcentagem ele faz sobre 100
         }
     } catch (error) {
         display.value = "Erro";
